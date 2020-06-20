@@ -13080,24 +13080,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;A B C D E&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;W X Y Z&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<span class="c1"># or: df = pd.DataFrame(100, [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;], [&#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;])</span>
-
-<span class="c1"># Show: </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;people.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;person_ID&#39;</span><span class="p">)</span> <span class="c1"># mặc định không có index_col sẽ là số thư tự 1 -&gt; 39</span>
 <span class="n">df</span>
 </pre></div>
 
@@ -13111,7 +13094,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -13134,47 +13117,509 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>W</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
+      <th>name</th>
+      <th>first</th>
+      <th>last</th>
+      <th>middle</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>fax</th>
+      <th>title</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>person_ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>A</th>
-      <td>1.484510</td>
-      <td>0.582819</td>
-      <td>-0.849725</td>
-      <td>0.355747</td>
+      <th>3130</th>
+      <td>Burks, Rosella</td>
+      <td>Rosella</td>
+      <td>Burks</td>
+      <td>NaN</td>
+      <td>BurksR@univ.edu</td>
+      <td>963.555.1253</td>
+      <td>963.777.4065</td>
+      <td>Professor</td>
+      <td>25</td>
     </tr>
     <tr>
-      <th>B</th>
-      <td>0.247290</td>
-      <td>0.935286</td>
-      <td>0.137584</td>
-      <td>-1.378622</td>
+      <th>3297</th>
+      <td>Avila, Damien</td>
+      <td>Damien</td>
+      <td>Avila</td>
+      <td>NaN</td>
+      <td>AvilaD@univ.edu</td>
+      <td>963.555.1352</td>
+      <td>963.777.7914</td>
+      <td>Professor</td>
+      <td>23</td>
     </tr>
     <tr>
-      <th>C</th>
-      <td>0.596107</td>
-      <td>1.624614</td>
-      <td>-1.510829</td>
-      <td>0.742234</td>
+      <th>3547</th>
+      <td>Olsen, Robin</td>
+      <td>Robin</td>
+      <td>Olsen</td>
+      <td>NaN</td>
+      <td>OlsenR@univ.edu</td>
+      <td>963.555.1378</td>
+      <td>963.777.9262</td>
+      <td>Assistant Professor</td>
+      <td>21</td>
     </tr>
     <tr>
-      <th>D</th>
-      <td>2.246514</td>
-      <td>-0.159797</td>
-      <td>-0.522798</td>
-      <td>0.488819</td>
+      <th>1538</th>
+      <td>Moises, Edgar Estes</td>
+      <td>Edgar</td>
+      <td>Moises</td>
+      <td>Estes</td>
+      <td>MoisesE@univ.edu</td>
+      <td>963.555.2731x3565</td>
+      <td>963.777.8264</td>
+      <td>Professor</td>
+      <td>18</td>
     </tr>
     <tr>
-      <th>E</th>
-      <td>-0.157078</td>
-      <td>-0.191695</td>
-      <td>0.155433</td>
-      <td>-0.251367</td>
+      <th>2941</th>
+      <td>Brian, Heath Pruitt</td>
+      <td>Heath</td>
+      <td>Brian</td>
+      <td>Pruitt</td>
+      <td>BrianH@univ.edu</td>
+      <td>963.555.2800</td>
+      <td>963.777.7249</td>
+      <td>Associate Curator</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>2401</th>
+      <td>Claude, Elvin Haney</td>
+      <td>Elvin</td>
+      <td>Claude</td>
+      <td>Haney</td>
+      <td>ClaudeE@univ.edu</td>
+      <td>963.555.2902</td>
+      <td>963.777.9730</td>
+      <td>Curator</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>2070</th>
+      <td>Mosley, Edmund</td>
+      <td>Edmund</td>
+      <td>Mosley</td>
+      <td>NaN</td>
+      <td>MosleyE@univ.edu</td>
+      <td>963.555.2945</td>
+      <td>963.777.9285</td>
+      <td>Assistant Professor</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>2561</th>
+      <td>Derek, Antoine Mccoy</td>
+      <td>Antoine</td>
+      <td>Derek</td>
+      <td>Mccoy</td>
+      <td>DerekA@univ.edu</td>
+      <td>963.555.2992</td>
+      <td>963.777.5454</td>
+      <td>Curator</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>1625</th>
+      <td>Hawkins, Callie</td>
+      <td>Callie</td>
+      <td>Hawkins</td>
+      <td>NaN</td>
+      <td>HawkinsC@univ.edu</td>
+      <td>963.555.3350x6480</td>
+      <td>963.777.4949</td>
+      <td>Professor</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>1307</th>
+      <td>Pate, Andrea</td>
+      <td>Andrea</td>
+      <td>Pate</td>
+      <td>NaN</td>
+      <td>PateA@univ.edu</td>
+      <td>963.555.3723</td>
+      <td>963.777.5049</td>
+      <td>Professor</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>2342</th>
+      <td>Austin, Liz</td>
+      <td>Liz</td>
+      <td>Austin</td>
+      <td>NaN</td>
+      <td>AustinL@univ.edu</td>
+      <td>963.555.4305</td>
+      <td>963.777.6143</td>
+      <td>Assistant Professor</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>2755</th>
+      <td>Kendrick, Reba Alford</td>
+      <td>Reba</td>
+      <td>Kendrick</td>
+      <td>Alford</td>
+      <td>KendrickR@univ.edu</td>
+      <td>963.555.4618x7744</td>
+      <td>963.777.4371</td>
+      <td>Associate Curator</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>4150</th>
+      <td>Sims, Angelina</td>
+      <td>Angelina</td>
+      <td>Sims</td>
+      <td>NaN</td>
+      <td>SimsA@univ.edu</td>
+      <td>963.555.5278</td>
+      <td>963.777.4400</td>
+      <td>Professor</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>3544</th>
+      <td>Mullins, Kimberly</td>
+      <td>Kimberly</td>
+      <td>Mullins</td>
+      <td>NaN</td>
+      <td>MullinsK@univ.edu</td>
+      <td>963.555.5471x1017</td>
+      <td>963.777.9783</td>
+      <td>Assistant Professor</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>2096</th>
+      <td>Chuck, Lloyd Haney</td>
+      <td>Lloyd</td>
+      <td>Chuck</td>
+      <td>Haney</td>
+      <td>ChuckL@univ.edu</td>
+      <td>963.555.5568x2652</td>
+      <td>963.777.9290</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1089</th>
+      <td>Payne, Ladonna</td>
+      <td>Ladonna</td>
+      <td>Payne</td>
+      <td>NaN</td>
+      <td>PayneL@univ.edu</td>
+      <td>963.555.5639</td>
+      <td>963.777.6469</td>
+      <td>Professor</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>2948</th>
+      <td>Baxter, Johnathan Browning</td>
+      <td>Johnathan</td>
+      <td>Baxter</td>
+      <td>Browning</td>
+      <td>BaxterJ@univ.edu</td>
+      <td>963.555.5902</td>
+      <td>963.777.8336</td>
+      <td>Research Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>4539</th>
+      <td>Weiss, Gilbert</td>
+      <td>Gilbert</td>
+      <td>Weiss</td>
+      <td>NaN</td>
+      <td>WeissG@univ.edu</td>
+      <td>963.555.5969</td>
+      <td>963.777.4975</td>
+      <td>Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2811</th>
+      <td>Deirdre, Florence Barrera</td>
+      <td>Florence</td>
+      <td>Deirdre</td>
+      <td>Barrera</td>
+      <td>DeirdreF@univ.edu</td>
+      <td>963.555.6319</td>
+      <td>963.777.9654</td>
+      <td>Associate Curator</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>4580</th>
+      <td>Fernando, Toby Calderon</td>
+      <td>Toby</td>
+      <td>Fernando</td>
+      <td>Calderon</td>
+      <td>FernandoT@univ.edu</td>
+      <td>963.555.6469</td>
+      <td>963.777.9864</td>
+      <td>Research Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2895</th>
+      <td>Garrison, Patrica</td>
+      <td>Patrica</td>
+      <td>Garrison</td>
+      <td>NaN</td>
+      <td>GarrisonP@univ.edu</td>
+      <td>963.555.6760</td>
+      <td>963.777.4958</td>
+      <td>Associate Curator</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>2254</th>
+      <td>Effie, Leila Vinson</td>
+      <td>Leila</td>
+      <td>Effie</td>
+      <td>Vinson</td>
+      <td>EffieL@univ.edu</td>
+      <td>963.555.6824</td>
+      <td>963.777.7299</td>
+      <td>Assistant Professor</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>2389</th>
+      <td>Buckley, Rose</td>
+      <td>Rose</td>
+      <td>Buckley</td>
+      <td>NaN</td>
+      <td>BuckleyR@univ.edu</td>
+      <td>963.555.6855x5018</td>
+      <td>963.777.5233</td>
+      <td>Curator</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>1699</th>
+      <td>Stanton, Kathie</td>
+      <td>Kathie</td>
+      <td>Stanton</td>
+      <td>NaN</td>
+      <td>StantonK@univ.edu</td>
+      <td>963.555.7095</td>
+      <td>963.777.1015</td>
+      <td>Professor</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>1567</th>
+      <td>Banks, Shannon</td>
+      <td>Shannon</td>
+      <td>Banks</td>
+      <td>NaN</td>
+      <td>BanksS@univ.edu</td>
+      <td>963.555.7198</td>
+      <td>963.777.6979</td>
+      <td>Professor</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>3066</th>
+      <td>Barnes, Cleo</td>
+      <td>Cleo</td>
+      <td>Barnes</td>
+      <td>NaN</td>
+      <td>BarnesC@univ.edu</td>
+      <td>963.555.7463x7335</td>
+      <td>963.777.1583</td>
+      <td>Research Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2426</th>
+      <td>Brady, Nellie</td>
+      <td>Nellie</td>
+      <td>Brady</td>
+      <td>NaN</td>
+      <td>BradyN@univ.edu</td>
+      <td>963.555.7569</td>
+      <td>963.777.7218</td>
+      <td>Curator</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2217</th>
+      <td>Katheryn, Ruben Holt</td>
+      <td>Ruben</td>
+      <td>Katheryn</td>
+      <td>Holt</td>
+      <td>KatherynR@univ.edu</td>
+      <td>963.555.7578</td>
+      <td>963.777.3969</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1968</th>
+      <td>Michael, Dianne</td>
+      <td>Dianne</td>
+      <td>Michael</td>
+      <td>NaN</td>
+      <td>MichaelD@univ.edu</td>
+      <td>963.555.7592</td>
+      <td>963.777.9960</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3012</th>
+      <td>Grant, Adam</td>
+      <td>Adam</td>
+      <td>Grant</td>
+      <td>NaN</td>
+      <td>GrantA@univ.edu</td>
+      <td>963.555.7775</td>
+      <td>963.777.8115</td>
+      <td>Research Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1824</th>
+      <td>Head, Kurtis</td>
+      <td>Kurtis</td>
+      <td>Head</td>
+      <td>NaN</td>
+      <td>HeadK@univ.edu</td>
+      <td>963.555.7882</td>
+      <td>963.777.6348</td>
+      <td>Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3929</th>
+      <td>Berger, Jami</td>
+      <td>Jami</td>
+      <td>Berger</td>
+      <td>NaN</td>
+      <td>BergerJ@univ.edu</td>
+      <td>963.555.8158</td>
+      <td>963.777.5650</td>
+      <td>Research Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2682</th>
+      <td>Earline, Jaime Fitzgerald</td>
+      <td>Jaime</td>
+      <td>Earline</td>
+      <td>Fitzgerald</td>
+      <td>EarlineJ@univ.edu</td>
+      <td>963.555.8357</td>
+      <td>963.777.4114</td>
+      <td>Associate Curator</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3112</th>
+      <td>Evelyn, Summer Frost</td>
+      <td>Summer</td>
+      <td>Evelyn</td>
+      <td>Frost</td>
+      <td>EvelynS@univ.edu</td>
+      <td>963.555.8895</td>
+      <td>963.777.5730</td>
+      <td>Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2303</th>
+      <td>Quentin, Sam Hyde</td>
+      <td>Sam</td>
+      <td>Quentin</td>
+      <td>Hyde</td>
+      <td>QuentinS@univ.edu</td>
+      <td>963.555.8921</td>
+      <td>963.777.2712</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3903</th>
+      <td>Dunlap, Ann</td>
+      <td>Ann</td>
+      <td>Dunlap</td>
+      <td>NaN</td>
+      <td>DunlapA@univ.edu</td>
+      <td>963.555.9067</td>
+      <td>963.777.4290</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3095</th>
+      <td>Shields, Rich Pena</td>
+      <td>Rich</td>
+      <td>Shields</td>
+      <td>Pena</td>
+      <td>ShieldsR@univ.edu</td>
+      <td>963.555.9197</td>
+      <td>963.777.7215</td>
+      <td>Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2383</th>
+      <td>Page, Winnie</td>
+      <td>Winnie</td>
+      <td>Page</td>
+      <td>NaN</td>
+      <td>PageW@univ.edu</td>
+      <td>963.555.9366</td>
+      <td>963.777.3202</td>
+      <td>Curator</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2146</th>
+      <td>Sparks, Ezra</td>
+      <td>Ezra</td>
+      <td>Sparks</td>
+      <td>NaN</td>
+      <td>SparksE@univ.edu</td>
+      <td>963.555.9390</td>
+      <td>963.777.9273</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3958</th>
+      <td>Kaufman, Elba</td>
+      <td>Elba</td>
+      <td>Kaufman</td>
+      <td>NaN</td>
+      <td>KaufmanE@univ.edu</td>
+      <td>963.555.9507</td>
+      <td>963.777.3298</td>
+      <td>Professor</td>
+      <td>25</td>
     </tr>
   </tbody>
 </table>
@@ -13197,11 +13642,87 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Kiểm tra và kí hiệu những người 22 tuổi là True và những người khác là False</span>
+<span class="n">age_bool</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">23</span><span class="p">)</span>
+<span class="n">age_bool</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>person_ID
+3130    False
+3297     True
+3547    False
+1538    False
+2941    False
+2401    False
+2070    False
+2561    False
+1625    False
+1307    False
+2342    False
+2755     True
+4150    False
+3544    False
+2096    False
+1089    False
+2948    False
+4539    False
+2811    False
+4580    False
+2895    False
+2254    False
+2389    False
+1699    False
+1567    False
+3066    False
+2426    False
+2217    False
+1968    False
+3012    False
+1824    False
+3929    False
+2682    False
+3112    False
+2303    False
+3903    False
+3095    False
+2383    False
+2146    False
+3958    False
+Name: age, dtype: bool</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">booldf</span> <span class="o">=</span> <span class="n">df</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
-<span class="n">booldf</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Đưa ra tất cả thông tin những người 23 tuổi:</span>
+<span class="n">df</span><span class="p">[</span><span class="n">age_bool</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13237,47 +13758,53 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>W</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
+      <th>name</th>
+      <th>first</th>
+      <th>last</th>
+      <th>middle</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>fax</th>
+      <th>title</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>person_ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>A</th>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
+      <th>3297</th>
+      <td>Avila, Damien</td>
+      <td>Damien</td>
+      <td>Avila</td>
+      <td>NaN</td>
+      <td>AvilaD@univ.edu</td>
+      <td>963.555.1352</td>
+      <td>963.777.7914</td>
+      <td>Professor</td>
+      <td>23</td>
     </tr>
     <tr>
-      <th>B</th>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>E</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
+      <th>2755</th>
+      <td>Kendrick, Reba Alford</td>
+      <td>Reba</td>
+      <td>Kendrick</td>
+      <td>Alford</td>
+      <td>KendrickR@univ.edu</td>
+      <td>963.555.4618x7744</td>
+      <td>963.777.4371</td>
+      <td>Associate Curator</td>
+      <td>23</td>
     </tr>
   </tbody>
 </table>
@@ -13295,8 +13822,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">booldf</span><span class="p">]</span>
-<span class="c1"># = df[df &gt; 0.5]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Viết gọn 2 dòng trên:</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="mi">23</span><span class="p">]</span> <span class="c1"># SQL syntax</span>
 </pre></div>
 
     </div>
@@ -13332,47 +13859,53 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>W</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
+      <th>name</th>
+      <th>first</th>
+      <th>last</th>
+      <th>middle</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>fax</th>
+      <th>title</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>person_ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>A</th>
-      <td>1.484510</td>
-      <td>0.582819</td>
+      <th>3297</th>
+      <td>Avila, Damien</td>
+      <td>Damien</td>
+      <td>Avila</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>AvilaD@univ.edu</td>
+      <td>963.555.1352</td>
+      <td>963.777.7914</td>
+      <td>Professor</td>
+      <td>23</td>
     </tr>
     <tr>
-      <th>B</th>
-      <td>NaN</td>
-      <td>0.935286</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>0.596107</td>
-      <td>1.624614</td>
-      <td>NaN</td>
-      <td>0.742234</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>2.246514</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>E</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>2755</th>
+      <td>Kendrick, Reba Alford</td>
+      <td>Reba</td>
+      <td>Kendrick</td>
+      <td>Alford</td>
+      <td>KendrickR@univ.edu</td>
+      <td>963.555.4618x7744</td>
+      <td>963.777.4371</td>
+      <td>Associate Curator</td>
+      <td>23</td>
     </tr>
   </tbody>
 </table>
@@ -13390,8 +13923,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bool_W</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
-<span class="n">bool_W</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Xem Tên những người dưới 25 tuổi</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13410,12 +13943,15 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>A     True
-B    False
-C     True
-D     True
-E    False
-Name: W, dtype: bool</pre>
+<pre>person_ID
+3297           Avila, Damien 
+3547            Olsen, Robin 
+1538      Moises, Edgar Estes
+2755    Kendrick, Reba Alford
+4150          Sims, Angelina 
+3544       Mullins, Kimberly 
+1089          Payne, Ladonna 
+Name: name, dtype: object</pre>
 </div>
 
 </div>
@@ -13429,8 +13965,8 @@ Name: W, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">bool_W</span><span class="p">]</span>
-<span class="c1"># = df[df[&#39;W&#39;] &gt; 0.5]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Xem Chức danh và Email những người dưới 25 tuổi</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">][[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13466,33 +14002,50 @@ Name: W, dtype: bool</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>W</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
+      <th>title</th>
+      <th>email</th>
+    </tr>
+    <tr>
+      <th>person_ID</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>A</th>
-      <td>1.484510</td>
-      <td>0.582819</td>
-      <td>-0.849725</td>
-      <td>0.355747</td>
+      <th>3297</th>
+      <td>Professor</td>
+      <td>AvilaD@univ.edu</td>
     </tr>
     <tr>
-      <th>C</th>
-      <td>0.596107</td>
-      <td>1.624614</td>
-      <td>-1.510829</td>
-      <td>0.742234</td>
+      <th>3547</th>
+      <td>Assistant Professor</td>
+      <td>OlsenR@univ.edu</td>
     </tr>
     <tr>
-      <th>D</th>
-      <td>2.246514</td>
-      <td>-0.159797</td>
-      <td>-0.522798</td>
-      <td>0.488819</td>
+      <th>1538</th>
+      <td>Professor</td>
+      <td>MoisesE@univ.edu</td>
+    </tr>
+    <tr>
+      <th>2755</th>
+      <td>Associate Curator</td>
+      <td>KendrickR@univ.edu</td>
+    </tr>
+    <tr>
+      <th>4150</th>
+      <td>Professor</td>
+      <td>SimsA@univ.edu</td>
+    </tr>
+    <tr>
+      <th>3544</th>
+      <td>Assistant Professor</td>
+      <td>MullinsK@univ.edu</td>
+    </tr>
+    <tr>
+      <th>1089</th>
+      <td>Professor</td>
+      <td>PayneL@univ.edu</td>
     </tr>
   </tbody>
 </table>
@@ -13510,8 +14063,9 @@ Name: W, dtype: bool</pre>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">bool_W</span><span class="p">][</span><span class="s1">&#39;X&#39;</span><span class="p">]</span>
-<span class="c1"># = df[df[&#39;W&#39;] &gt; 0.5][&#39;X&#39;]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Đưa ra thông tin những người mà trong tên có chữ &#39;h&#39;</span>
+<span class="n">name_contain</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">name_contain</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13528,12 +14082,148 @@ Name: W, dtype: bool</pre>
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>A    0.582819
-C    1.624614
-D   -0.159797
-Name: X, dtype: float64</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>first</th>
+      <th>last</th>
+      <th>middle</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>fax</th>
+      <th>title</th>
+      <th>age</th>
+    </tr>
+    <tr>
+      <th>person_ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2941</th>
+      <td>Brian, Heath Pruitt</td>
+      <td>Heath</td>
+      <td>Brian</td>
+      <td>Pruitt</td>
+      <td>BrianH@univ.edu</td>
+      <td>963.555.2800</td>
+      <td>963.777.7249</td>
+      <td>Associate Curator</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>2096</th>
+      <td>Chuck, Lloyd Haney</td>
+      <td>Lloyd</td>
+      <td>Chuck</td>
+      <td>Haney</td>
+      <td>ChuckL@univ.edu</td>
+      <td>963.555.5568x2652</td>
+      <td>963.777.9290</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>2948</th>
+      <td>Baxter, Johnathan Browning</td>
+      <td>Johnathan</td>
+      <td>Baxter</td>
+      <td>Browning</td>
+      <td>BaxterJ@univ.edu</td>
+      <td>963.555.5902</td>
+      <td>963.777.8336</td>
+      <td>Research Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1699</th>
+      <td>Stanton, Kathie</td>
+      <td>Kathie</td>
+      <td>Stanton</td>
+      <td>NaN</td>
+      <td>StantonK@univ.edu</td>
+      <td>963.555.7095</td>
+      <td>963.777.1015</td>
+      <td>Professor</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>1567</th>
+      <td>Banks, Shannon</td>
+      <td>Shannon</td>
+      <td>Banks</td>
+      <td>NaN</td>
+      <td>BanksS@univ.edu</td>
+      <td>963.555.7198</td>
+      <td>963.777.6979</td>
+      <td>Professor</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>2217</th>
+      <td>Katheryn, Ruben Holt</td>
+      <td>Ruben</td>
+      <td>Katheryn</td>
+      <td>Holt</td>
+      <td>KatherynR@univ.edu</td>
+      <td>963.555.7578</td>
+      <td>963.777.3969</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>1968</th>
+      <td>Michael, Dianne</td>
+      <td>Dianne</td>
+      <td>Michael</td>
+      <td>NaN</td>
+      <td>MichaelD@univ.edu</td>
+      <td>963.555.7592</td>
+      <td>963.777.9960</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>3095</th>
+      <td>Shields, Rich Pena</td>
+      <td>Rich</td>
+      <td>Shields</td>
+      <td>Pena</td>
+      <td>ShieldsR@univ.edu</td>
+      <td>963.555.9197</td>
+      <td>963.777.7215</td>
+      <td>Professor</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13541,14 +14231,24 @@ Name: X, dtype: float64</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>For two conditions we can use | and &amp; with parenthesis:</strong></li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_column</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="n">bool_W</span><span class="p">][</span><span class="n">my_column</span><span class="p">]</span> <span class="c1"># = df[df[&#39;W&#39;] &gt; 0.5][[&#39;X&#39;, &#39;Y&#39;]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Xem những người dưới 25 tuổi mà có chức danh Giáo sư:</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Professor&#39;</span><span class="p">)]</span>
 </pre></div>
 
     </div>
@@ -13584,113 +14284,65 @@ Name: X, dtype: float64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>X</th>
-      <th>Y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>A</th>
-      <td>0.582819</td>
-      <td>-0.849725</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>1.624614</td>
-      <td>-1.510829</td>
+      <th>name</th>
+      <th>first</th>
+      <th>last</th>
+      <th>middle</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>fax</th>
+      <th>title</th>
+      <th>age</th>
     </tr>
     <tr>
-      <th>D</th>
-      <td>-0.159797</td>
-      <td>-0.522798</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>For two conditions you can use | and &amp; with parenthesis:</em></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
+      <th>person_ID</th>
       <th></th>
-      <th>W</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>A</th>
-      <td>1.484510</td>
-      <td>0.582819</td>
-      <td>-0.849725</td>
-      <td>0.355747</td>
+      <th>1538</th>
+      <td>Moises, Edgar Estes</td>
+      <td>Edgar</td>
+      <td>Moises</td>
+      <td>Estes</td>
+      <td>MoisesE@univ.edu</td>
+      <td>963.555.2731x3565</td>
+      <td>963.777.8264</td>
+      <td>Professor</td>
+      <td>18</td>
     </tr>
     <tr>
-      <th>C</th>
-      <td>0.596107</td>
-      <td>1.624614</td>
-      <td>-1.510829</td>
-      <td>0.742234</td>
+      <th>4150</th>
+      <td>Sims, Angelina</td>
+      <td>Angelina</td>
+      <td>Sims</td>
+      <td>NaN</td>
+      <td>SimsA@univ.edu</td>
+      <td>963.555.5278</td>
+      <td>963.777.4400</td>
+      <td>Professor</td>
+      <td>22</td>
     </tr>
     <tr>
-      <th>D</th>
-      <td>2.246514</td>
-      <td>-0.159797</td>
-      <td>-0.522798</td>
-      <td>0.488819</td>
+      <th>1089</th>
+      <td>Payne, Ladonna</td>
+      <td>Ladonna</td>
+      <td>Payne</td>
+      <td>NaN</td>
+      <td>PayneL@univ.edu</td>
+      <td>963.555.5639</td>
+      <td>963.777.6469</td>
+      <td>Professor</td>
+      <td>24</td>
     </tr>
   </tbody>
 </table>
