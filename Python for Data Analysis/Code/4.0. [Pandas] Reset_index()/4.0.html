@@ -13081,6 +13081,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
 </pre></div>
 
     </div>
@@ -13093,11 +13094,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import randn from random (Numpy)</span>
-<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">100</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;A B C D E&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;W X Y Z&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<span class="c1">#or: df = pd.DataFrame(100, index = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;], columns = [&#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;A B C D E&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;W X Y Z&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="c1"># or: df = pd.DataFrame(randn(5, 4), [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;], [&#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;])</span>
 
 <span class="c1"># Show: </span>
 <span class="n">df</span>
@@ -13145,38 +13143,38 @@ div#notebook {
   <tbody>
     <tr>
       <th>A</th>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
+      <td>-1.058196</td>
+      <td>-0.204542</td>
+      <td>0.943968</td>
+      <td>0.616086</td>
     </tr>
     <tr>
       <th>B</th>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
+      <td>0.177546</td>
+      <td>-2.444276</td>
+      <td>0.240306</td>
+      <td>0.322357</td>
     </tr>
     <tr>
       <th>C</th>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
+      <td>-0.154789</td>
+      <td>1.739691</td>
+      <td>-0.190889</td>
+      <td>0.527152</td>
     </tr>
     <tr>
       <th>D</th>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
+      <td>-0.124014</td>
+      <td>-1.317651</td>
+      <td>0.213120</td>
+      <td>-0.525223</td>
     </tr>
     <tr>
       <th>E</th>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
-      <td>110</td>
+      <td>0.132589</td>
+      <td>0.495217</td>
+      <td>0.756114</td>
+      <td>0.816136</td>
     </tr>
   </tbody>
 </table>
@@ -13189,12 +13187,27 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="reset_index()">reset_index()<a class="anchor-link" href="#reset_index()">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Inplace:</em></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;W X Y Z&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13230,6 +13243,7 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>index</th>
       <th>W</th>
       <th>X</th>
       <th>Y</th>
@@ -13238,39 +13252,44 @@ div#notebook {
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>-1.058196</td>
+      <td>-0.204542</td>
+      <td>0.943968</td>
+      <td>0.616086</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>0.177546</td>
+      <td>-2.444276</td>
+      <td>0.240306</td>
+      <td>0.322357</td>
+    </tr>
+    <tr>
       <th>2</th>
-      <td>-2.032938</td>
-      <td>-0.062098</td>
-      <td>-0.253837</td>
-      <td>0.336143</td>
+      <td>C</td>
+      <td>-0.154789</td>
+      <td>1.739691</td>
+      <td>-0.190889</td>
+      <td>0.527152</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>-1.383650</td>
-      <td>0.879229</td>
-      <td>-0.709668</td>
-      <td>-0.480183</td>
+      <th>3</th>
+      <td>D</td>
+      <td>-0.124014</td>
+      <td>-1.317651</td>
+      <td>0.213120</td>
+      <td>-0.525223</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>-1.478461</td>
-      <td>-0.539617</td>
-      <td>-0.559185</td>
-      <td>-0.335592</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0.200353</td>
-      <td>-0.049111</td>
-      <td>-0.621155</td>
-      <td>0.645060</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>-1.417934</td>
-      <td>-0.165935</td>
-      <td>-3.091766</td>
-      <td>-0.257427</td>
+      <th>4</th>
+      <td>E</td>
+      <td>0.132589</td>
+      <td>0.495217</td>
+      <td>0.756114</td>
+      <td>0.816136</td>
     </tr>
   </tbody>
 </table>
@@ -13288,7 +13307,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="c1"># not changed</span>
 </pre></div>
 
     </div>
@@ -13324,59 +13343,47 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>-1.299519</td>
-      <td>-0.654698</td>
-      <td>-0.225711</td>
-      <td>0.499191</td>
-      <td>0.476220</td>
-      <td>1.135937</td>
+      <th>A</th>
+      <td>-1.058196</td>
+      <td>-0.204542</td>
+      <td>0.943968</td>
+      <td>0.616086</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>1.181957</td>
-      <td>-0.160272</td>
-      <td>0.960591</td>
-      <td>-0.022886</td>
-      <td>-2.266803</td>
-      <td>-0.035191</td>
+      <th>B</th>
+      <td>0.177546</td>
+      <td>-2.444276</td>
+      <td>0.240306</td>
+      <td>0.322357</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>-0.135531</td>
-      <td>2.596679</td>
-      <td>-0.989113</td>
-      <td>0.516275</td>
-      <td>-0.231511</td>
-      <td>-0.202379</td>
+      <th>C</th>
+      <td>-0.154789</td>
+      <td>1.739691</td>
+      <td>-0.190889</td>
+      <td>0.527152</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>1.065111</td>
-      <td>1.444200</td>
-      <td>0.600402</td>
-      <td>0.010244</td>
-      <td>-0.291570</td>
-      <td>1.957113</td>
+      <th>D</th>
+      <td>-0.124014</td>
+      <td>-1.317651</td>
+      <td>0.213120</td>
+      <td>-0.525223</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>1.509461</td>
-      <td>-1.617369</td>
-      <td>0.326956</td>
-      <td>-1.972653</td>
-      <td>-2.141312</td>
-      <td>-0.239058</td>
+      <th>E</th>
+      <td>0.132589</td>
+      <td>0.495217</td>
+      <td>0.756114</td>
+      <td>0.816136</td>
     </tr>
   </tbody>
 </table>
@@ -13394,8 +13401,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="c1"># Show:</span>
+<span class="n">temp</span>
 </pre></div>
 
     </div>
@@ -13431,25 +13439,53 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>1</th>
-      <th>2</th>
+      <th>index</th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>-1.058196</td>
+      <td>-0.204542</td>
+      <td>0.943968</td>
+      <td>0.616086</td>
+    </tr>
+    <tr>
       <th>1</th>
-      <td>2.706850</td>
-      <td>0.628133</td>
+      <td>B</td>
+      <td>0.177546</td>
+      <td>-2.444276</td>
+      <td>0.240306</td>
+      <td>0.322357</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.907969</td>
-      <td>0.503826</td>
+      <td>C</td>
+      <td>-0.154789</td>
+      <td>1.739691</td>
+      <td>-0.190889</td>
+      <td>0.527152</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.651118</td>
-      <td>-0.319318</td>
+      <td>D</td>
+      <td>-0.124014</td>
+      <td>-1.317651</td>
+      <td>0.213120</td>
+      <td>-0.525223</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>E</td>
+      <td>0.132589</td>
+      <td>0.495217</td>
+      <td>0.756114</td>
+      <td>0.816136</td>
     </tr>
   </tbody>
 </table>
@@ -13467,8 +13503,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># or:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="c1"># be changed</span>
 </pre></div>
 
     </div>
@@ -13481,17 +13518,395 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[ 2.70684984  0.62813271]
- [ 0.90796945  0.50382575]
- [ 0.65111795 -0.31931804]]
-</pre>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>-1.058196</td>
+      <td>-0.204542</td>
+      <td>0.943968</td>
+      <td>0.616086</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>0.177546</td>
+      <td>-2.444276</td>
+      <td>0.240306</td>
+      <td>0.322357</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>-0.154789</td>
+      <td>1.739691</td>
+      <td>-0.190889</td>
+      <td>0.527152</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>D</td>
+      <td>-0.124014</td>
+      <td>-1.317651</td>
+      <td>0.213120</td>
+      <td>-0.525223</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>E</td>
+      <td>0.132589</td>
+      <td>0.495217</td>
+      <td>0.756114</td>
+      <td>0.816136</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Drop:</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creat new df:</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="s1">&#39;A B C D E&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="s1">&#39;W X Y Z&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>-1.689642</td>
+      <td>1.504171</td>
+      <td>-0.292060</td>
+      <td>-0.162326</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.111751</td>
+      <td>-0.428122</td>
+      <td>-0.660478</td>
+      <td>0.612109</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>1.217122</td>
+      <td>0.126814</td>
+      <td>0.121887</td>
+      <td>-1.194253</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.798105</td>
+      <td>-0.481531</td>
+      <td>-0.482608</td>
+      <td>-0.447319</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.763002</td>
+      <td>0.540958</td>
+      <td>0.815755</td>
+      <td>-1.650619</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>-1.689642</td>
+      <td>1.504171</td>
+      <td>-0.292060</td>
+      <td>-0.162326</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>0.111751</td>
+      <td>-0.428122</td>
+      <td>-0.660478</td>
+      <td>0.612109</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C</td>
+      <td>1.217122</td>
+      <td>0.126814</td>
+      <td>0.121887</td>
+      <td>-1.194253</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>D</td>
+      <td>0.798105</td>
+      <td>-0.481531</td>
+      <td>-0.482608</td>
+      <td>-0.447319</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>E</td>
+      <td>0.763002</td>
+      <td>0.540958</td>
+      <td>0.815755</td>
+      <td>-1.650619</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.689642</td>
+      <td>1.504171</td>
+      <td>-0.292060</td>
+      <td>-0.162326</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.111751</td>
+      <td>-0.428122</td>
+      <td>-0.660478</td>
+      <td>0.612109</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.217122</td>
+      <td>0.126814</td>
+      <td>0.121887</td>
+      <td>-1.194253</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.798105</td>
+      <td>-0.481531</td>
+      <td>-0.482608</td>
+      <td>-0.447319</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.763002</td>
+      <td>0.540958</td>
+      <td>0.815755</td>
+      <td>-1.650619</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
