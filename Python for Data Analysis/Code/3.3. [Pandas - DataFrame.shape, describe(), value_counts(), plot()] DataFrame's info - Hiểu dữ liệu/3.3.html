@@ -13080,11 +13080,279 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">randn</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;pp.csv&#39;</span><span class="p">)</span> 
+<span class="n">df</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>person_ID</th>
+      <th>name</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>fax</th>
+      <th>title</th>
+      <th>age</th>
+      <th>maths</th>
+      <th>physics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3130</td>
+      <td>Burks, Rosella</td>
+      <td>BurksR@univ.edu</td>
+      <td>963.555.1253</td>
+      <td>963.777.4065</td>
+      <td>Professor</td>
+      <td>25</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3297</td>
+      <td>Avila, Damien</td>
+      <td>AvilaD@univ.edu</td>
+      <td>963.555.1352</td>
+      <td>963.777.7914</td>
+      <td>Professor</td>
+      <td>23</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3547</td>
+      <td>Olsen, Robin</td>
+      <td>OlsenR@univ.edu</td>
+      <td>963.555.1378</td>
+      <td>963.777.9262</td>
+      <td>Assistant Professor</td>
+      <td>21</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1538</td>
+      <td>Moises, Edgar Estes</td>
+      <td>MoisesE@univ.edu</td>
+      <td>963.555.2731x3565</td>
+      <td>963.777.8264</td>
+      <td>Professor</td>
+      <td>18</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2941</td>
+      <td>Brian, Heath Pruitt</td>
+      <td>BrianH@univ.edu</td>
+      <td>963.555.2800</td>
+      <td>963.777.7249</td>
+      <td>Associate Curator</td>
+      <td>30</td>
+      <td>9</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2401</td>
+      <td>Claude, Elvin Haney</td>
+      <td>ClaudeE@univ.edu</td>
+      <td>963.555.2902</td>
+      <td>963.777.9730</td>
+      <td>Curator</td>
+      <td>35</td>
+      <td>10</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2070</td>
+      <td>Mosley, Edmund</td>
+      <td>MosleyE@univ.edu</td>
+      <td>963.555.2945</td>
+      <td>963.777.9285</td>
+      <td>Assistant Professor</td>
+      <td>35</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2561</td>
+      <td>Derek, Antoine Mccoy</td>
+      <td>DerekA@univ.edu</td>
+      <td>963.555.2992</td>
+      <td>963.777.5454</td>
+      <td>Curator</td>
+      <td>35</td>
+      <td>8</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1625</td>
+      <td>Hawkins, Callie</td>
+      <td>HawkinsC@univ.edu</td>
+      <td>963.555.3350x6480</td>
+      <td>963.777.4949</td>
+      <td>Professor</td>
+      <td>29</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1307</td>
+      <td>Pate, Andrea</td>
+      <td>PateA@univ.edu</td>
+      <td>963.555.3723</td>
+      <td>963.777.5049</td>
+      <td>Professor</td>
+      <td>29</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2342</td>
+      <td>Austin, Liz</td>
+      <td>AustinL@univ.edu</td>
+      <td>963.555.4305</td>
+      <td>963.777.6143</td>
+      <td>Assistant Professor</td>
+      <td>28</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2755</td>
+      <td>Kendrick, Reba Alford</td>
+      <td>KendrickR@univ.edu</td>
+      <td>963.555.4618x7744</td>
+      <td>963.777.4371</td>
+      <td>Associate Curator</td>
+      <td>23</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4150</td>
+      <td>Sims, Angelina</td>
+      <td>SimsA@univ.edu</td>
+      <td>963.555.5278</td>
+      <td>963.777.4400</td>
+      <td>Professor</td>
+      <td>22</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>3544</td>
+      <td>Mullins, Kimberly</td>
+      <td>MullinsK@univ.edu</td>
+      <td>963.555.5471x1017</td>
+      <td>963.777.9783</td>
+      <td>Assistant Professor</td>
+      <td>22</td>
+      <td>10</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2096</td>
+      <td>Chuck, Lloyd Haney</td>
+      <td>ChuckL@univ.edu</td>
+      <td>963.555.5568x2652</td>
+      <td>963.777.9290</td>
+      <td>Assistant Professor</td>
+      <td>25</td>
+      <td>8</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1089</td>
+      <td>Payne, Ladonna</td>
+      <td>PayneL@univ.edu</td>
+      <td>963.555.5639</td>
+      <td>963.777.6469</td>
+      <td>Professor</td>
+      <td>24</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2948</td>
+      <td>Baxter, Johnathan Browning</td>
+      <td>BaxterJ@univ.edu</td>
+      <td>963.555.5902</td>
+      <td>963.777.8336</td>
+      <td>Research Professor</td>
+      <td>25</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>4539</td>
+      <td>Weiss, Gilbert</td>
+      <td>WeissG@univ.edu</td>
+      <td>963.555.5969</td>
+      <td>963.777.4975</td>
+      <td>Professor</td>
+      <td>25</td>
+      <td>8</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13094,11 +13362,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;A B C D E&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;W X Y Z&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<span class="c1"># or: df = pd.DataFrame(100, [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;], [&#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;])</span>
-
-<span class="c1"># Show: </span>
-<span class="n">df</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Chiều dài của df:</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="c1"># = people_df.shape[0]</span>
 </pre></div>
 
     </div>
@@ -13115,70 +13380,9 @@ div#notebook {
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>W</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>A</th>
-      <td>1.262582</td>
-      <td>-0.170335</td>
-      <td>0.153122</td>
-      <td>0.214867</td>
-    </tr>
-    <tr>
-      <th>B</th>
-      <td>-1.146383</td>
-      <td>0.090617</td>
-      <td>-1.937719</td>
-      <td>-0.215078</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>1.287724</td>
-      <td>0.516630</td>
-      <td>-1.156035</td>
-      <td>0.455187</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>-0.124970</td>
-      <td>0.238288</td>
-      <td>1.229898</td>
-      <td>0.135686</td>
-    </tr>
-    <tr>
-      <th>E</th>
-      <td>0.475735</td>
-      <td>-0.699928</td>
-      <td>1.718579</td>
-      <td>-0.542778</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>18</pre>
 </div>
 
 </div>
@@ -13186,22 +13390,14 @@ div#notebook {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Removing-column:">Removing column:<a class="anchor-link" href="#Removing-column:">&#182;</a></h3>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="c1"># Or: df.drop(&#39;W&#39;, axis = True)</span>
-<span class="c1"># Or: df.drop(&#39;W&#39;, True)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Xem thông tin:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13214,91 +13410,41 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt"></div>
 
 
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>A</th>
-      <td>-0.170335</td>
-      <td>0.153122</td>
-      <td>0.214867</td>
-    </tr>
-    <tr>
-      <th>B</th>
-      <td>0.090617</td>
-      <td>-1.937719</td>
-      <td>-0.215078</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>0.516630</td>
-      <td>-1.156035</td>
-      <td>0.455187</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>0.238288</td>
-      <td>1.229898</td>
-      <td>0.135686</td>
-    </tr>
-    <tr>
-      <th>E</th>
-      <td>-0.699928</td>
-      <td>1.718579</td>
-      <td>-0.542778</td>
-    </tr>
-  </tbody>
-</table>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 18 entries, 0 to 17
+Data columns (total 9 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   person_ID  18 non-null     int64 
+ 1   name       18 non-null     object
+ 2   email      18 non-null     object
+ 3   phone      18 non-null     object
+ 4   fax        18 non-null     object
+ 5   title      18 non-null     object
+ 6   age        18 non-null     int64 
+ 7   maths      18 non-null     int64 
+ 8   physics    18 non-null     int64 
+dtypes: int64(4), object(5)
+memory usage: 1.4+ KB
+</pre>
 </div>
-</div>
-
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Not inplace unless specified :</em></p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Show &#39;df&#39;:</span>
-<span class="n">df</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Kích thước của df:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 
     </div>
@@ -13315,70 +13461,9 @@ div#notebook {
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>W</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>A</th>
-      <td>1.262582</td>
-      <td>-0.170335</td>
-      <td>0.153122</td>
-      <td>0.214867</td>
-    </tr>
-    <tr>
-      <th>B</th>
-      <td>-1.146383</td>
-      <td>0.090617</td>
-      <td>-1.937719</td>
-      <td>-0.215078</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>1.287724</td>
-      <td>0.516630</td>
-      <td>-1.156035</td>
-      <td>0.455187</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>-0.124970</td>
-      <td>0.238288</td>
-      <td>1.229898</td>
-      <td>0.135686</td>
-    </tr>
-    <tr>
-      <th>E</th>
-      <td>0.475735</td>
-      <td>-0.699928</td>
-      <td>1.718579</td>
-      <td>-0.542778</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>(18, 9)</pre>
 </div>
 
 </div>
@@ -13386,27 +13471,80 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Thư viện pandas python cung cấp một số hàm giúp hiểu về cấu trúc, phân bố của dữ liệu.</em></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0     25
+1     23
+2     21
+3     18
+4     30
+5     35
+6     35
+7     35
+8     29
+9     29
+10    28
+11    23
+12    22
+13    22
+14    25
+15    24
+16    25
+17    25
+Name: age, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Sử dụng hàm describe() cho các thống kê cơ bản về dữ liệu:</em></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># be changed:</span>
-<span class="n">df</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13442,45 +13580,179 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>X</th>
-      <th>Y</th>
-      <th>Z</th>
+      <th>person_ID</th>
+      <th>age</th>
+      <th>maths</th>
+      <th>physics</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>A</th>
-      <td>-0.170335</td>
-      <td>0.153122</td>
-      <td>0.214867</td>
+      <th>count</th>
+      <td>18.000000</td>
+      <td>18.000000</td>
+      <td>18.000000</td>
+      <td>18.000000</td>
     </tr>
     <tr>
-      <th>B</th>
-      <td>0.090617</td>
-      <td>-1.937719</td>
-      <td>-0.215078</td>
+      <th>mean</th>
+      <td>2660.000000</td>
+      <td>26.333333</td>
+      <td>8.777778</td>
+      <td>9.555556</td>
     </tr>
     <tr>
-      <th>C</th>
-      <td>0.516630</td>
-      <td>-1.156035</td>
-      <td>0.455187</td>
+      <th>std</th>
+      <td>957.617325</td>
+      <td>5.005879</td>
+      <td>1.114374</td>
+      <td>0.704792</td>
     </tr>
     <tr>
-      <th>D</th>
-      <td>0.238288</td>
-      <td>1.229898</td>
-      <td>0.135686</td>
+      <th>min</th>
+      <td>1089.000000</td>
+      <td>18.000000</td>
+      <td>7.000000</td>
+      <td>8.000000</td>
     </tr>
     <tr>
-      <th>E</th>
-      <td>-0.699928</td>
-      <td>1.718579</td>
-      <td>-0.542778</td>
+      <th>25%</th>
+      <td>2076.500000</td>
+      <td>23.000000</td>
+      <td>8.000000</td>
+      <td>9.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2658.000000</td>
+      <td>25.000000</td>
+      <td>9.000000</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3255.250000</td>
+      <td>29.000000</td>
+      <td>10.000000</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>4539.000000</td>
+      <td>35.000000</td>
+      <td>10.000000</td>
+      <td>10.000000</td>
     </tr>
   </tbody>
 </table>
 </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Xem cụ thể hơn trên từng cột:</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>25    4
+35    3
+29    2
+23    2
+22    2
+30    1
+28    1
+24    1
+21    1
+18    1
+Name: age, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Vẽ đồ thị xem phân bố giá trị của một trường trong dataframe:</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x20deb2cc608&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
 </div>
