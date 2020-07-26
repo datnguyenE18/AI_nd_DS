@@ -1,12 +1,13 @@
 ﻿import random
 import math
 
-d = 20 
-R = 3 
-tries = 1000000 
+# Giả sử giao điểm giữa 2 đường chéo của hình vuông có tọa độ (0, 0)
+d = 20 # Cạnh hình vuông
+R = 3 # Bán kính hình tròn
+tries = 1000000 # Số lần thử
 inside = 0 
-x = 5 
-y = -3 
+x = 5 # Hoành độ tâm hình tròn
+y = -3 # Tung độ tâm hình tròn
 lmt = d / 2
 
 for i in range(tries):
