@@ -27,8 +27,7 @@ int main() {
 	double lmt = d / 2;
 	srand(time(NULL));
 
-	while ( tries-- ) {
-		srand(time(NULL));
+	for ( int i = 0; i < tries; i++ ) {
 		rand_x = random(-lmt, lmt);
 		rand_y = random(-lmt, lmt);
 
@@ -36,8 +35,8 @@ int main() {
 			inside++;
 	}
 
-	pi = ( pow(d, 2) * ( inside / tries ) ) / pow(R, 2);
+	pi = ( d * d * ( (double) inside / tries ) ) / ( R * R );
 	cout << pi;
 }
 
-// KQ: 0 
+// KQ: 3.33596
