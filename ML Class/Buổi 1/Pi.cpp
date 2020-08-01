@@ -1,5 +1,4 @@
-﻿/*Not solution*/
-#include<bits/stdc++.h>
+﻿#include<bits/stdc++.h>
 using namespace std;
 
 /* Giả sử giao điểm giữa 2 đường chéo của hình vuông có tọa độ(0, 0)*/
