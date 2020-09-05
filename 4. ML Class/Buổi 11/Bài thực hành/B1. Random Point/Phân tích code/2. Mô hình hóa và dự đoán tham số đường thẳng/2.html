@@ -13115,14 +13115,16 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Vì sao phải np.array(X).reshape((-1, 1))</strong></p>
-<p><strong>Python</strong><em> </em> <em> </em> <em> </em> <em> </em> _<strong>numpy</strong></p>
+<p><strong>Python</strong><em> </em> <em> </em> <em> </em> <em> </em> _<strong>Numpy</strong></p>
 <p>[1, 2, 3, 4, 5]<em> </em> <em> </em> _[1, 2, 3, 4, 5]</p>
-<p>mà để thực hiện hồi quy thì x phải là các vector, nghĩa là:</p>
-<p><strong>numpy:</strong></p>
+<p>mà để thực hiện hồi quy (tổng quát là <strong>y= a0 + a1.x1 + a2.x2 + … +  an.xn</strong>) thì một y có thể có nhiều x 
+=&gt; x phải là các vector, nghĩa là:</p>
+<p><strong>Numpy:</strong></p>
 <p>[[1], [2], [3], [4], [5]]</p>
-<p>còn với nhiều chiều thì không cần nữa vì nó sẵn là các vector rồi
+<hr>
+<p>Còn với nhiều chiều thì không cần nữa vì nó sẵn là các vector rồi
 Ví dụ:</p>
-<p><strong>Python</strong><em> </em> <em> </em> <em> </em> <em> </em> <strong> <em> </em> </strong> <em> </em> _<strong>numpy</strong></p>
+<p><strong>Python</strong><em> </em> <em> </em> <em> </em> <em> </em> <strong> <em> </em> </strong> <em> </em> _<strong>Numpy</strong></p>
 <p>[[1,2], [3,4], [5, 6]]<em> </em> <em> </em> <em> </em> <em> </em> _[[1,2], [3,4], [5, 6]]</p>
 
 </div>
