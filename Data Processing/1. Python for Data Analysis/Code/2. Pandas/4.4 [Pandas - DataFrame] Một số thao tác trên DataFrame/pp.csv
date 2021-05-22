@@ -1,0 +1,19 @@
+person_ID,name,email,phone,fax,title,age,maths,physics
+3130,"Burks, Rosella ",BurksR@univ.edu,963.555.1253,963.777.4065,Professor,25,10,10
+3297,"Avila, Damien ",AvilaD@univ.edu,963.555.1352,963.777.7914,Professor ,23,9,10
+3547,"Olsen, Robin ",OlsenR@univ.edu,963.555.1378,963.777.9262,Assistant Professor,21,7,10
+1538,"Moises, Edgar Estes",MoisesE@univ.edu,963.555.2731x3565,963.777.8264,Professor,18,8,9
+2941,"Brian, Heath Pruitt",BrianH@univ.edu,963.555.2800,963.777.7249,Associate Curator ,30,9,8
+2401,"Claude, Elvin Haney",ClaudeE@univ.edu,963.555.2902,963.777.9730,Curator,35,10,9
+2070,"Mosley, Edmund ",MosleyE@univ.edu,963.555.2945,963.777.9285,Assistant Professor,35,7,8
+2561,"Derek, Antoine Mccoy",DerekA@univ.edu,963.555.2992,963.777.5454,Curator,35,8,10
+1625,"Hawkins, Callie ",HawkinsC@univ.edu,963.555.3350x6480,963.777.4949,Professor,29,9,10
+1307,"Pate, Andrea ",PateA@univ.edu,963.555.3723,963.777.5049,Professor,29,10,10
+2342,"Austin, Liz ",AustinL@univ.edu,963.555.4305,963.777.6143,Assistant Professor,28,9,9
+2755,"Kendrick, Reba Alford",KendrickR@univ.edu,963.555.4618x7744,963.777.4371,Associate Curator ,23,10,10
+4150,"Sims, Angelina ",SimsA@univ.edu,963.555.5278,963.777.4400,Professor,22,10,10
+3544,"Mullins, Kimberly ",MullinsK@univ.edu,963.555.5471x1017,963.777.9783,Assistant Professor,22,10,9
+2096,"Chuck, Lloyd Haney",ChuckL@univ.edu,963.555.5568x2652,963.777.9290,Assistant Professor,25,8,10
+1089,"Payne, Ladonna ",PayneL@univ.edu,963.555.5639,963.777.6469,Professor,24,9,10
+2948,"Baxter, Johnathan Browning",BaxterJ@univ.edu,963.555.5902,963.777.8336,Research Professor,25,7,10
+4539,"Weiss, Gilbert ",WeissG@univ.edu,963.555.5969,963.777.4975,Professor,25,8,10

@@ -1,0 +1,4 @@
+CSV: https://drive.google.com/file/d/1rILBShfq1EmelBhMMNX6WY2MGBY_AKW5/view
+SQL: https://drive.google.com/file/d/1zPDDayz0bgQ_7pwo1Ml96VZtH25v9AKn/view
+
+Nguồn Kaggle: https://www.kaggle.com/kaggle/sf-salaries
