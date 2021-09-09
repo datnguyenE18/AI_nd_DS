@@ -1,0 +1,1 @@
+Trong bài tập này, các bạn sẽ lập trình công thức để tính hệ số tương quan giữa 2 ảnh. Sau đó, sẽ so sánh với công thức được lập trình sẵn trong thư viện Numpy.

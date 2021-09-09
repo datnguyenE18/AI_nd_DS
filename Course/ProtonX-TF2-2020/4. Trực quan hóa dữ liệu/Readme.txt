@@ -1,0 +1,1 @@
+Matplotlib và Seaborn là những thư viện trực quan phổ biến nhất khi nói đến trực quan hóa tập dữ liệu của bạn bằng python. Matplotlib cho phép bạn kiểm soát ở mức độ thấp đối với mọi thành phần của biểu đồ, trong khi seaborn cho phép bạn tạo các biểu đồ tinh vi với một vài dòng mã

@@ -1,0 +1,6 @@
+Thông qua bài tập này, các bạn đã nắm vững một số kiến thức cơ bản về lập trình Python.
+
+- Nhập và xuất giá trị
+- Một số thư viện như Math, Random, ...
+- Định nghĩa hàm 
+- Vòng lặp 
